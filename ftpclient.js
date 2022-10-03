@@ -72,8 +72,8 @@ FTPClient.prototype._connect = function (callback) {
     this._next = this._sendUser
     this._callback = callback
     this._cmdSocket = new net.Socket()
-    this._cmdSocket.connect(21, this._config.host, () => {
-        if (this._config.debug) console.log('Connected to ' + this._config.host + ":21")
+    this._cmdSocket.connect(2122, this._config.host, () => {
+        if (this._config.debug) console.log('Connected to ' + this._config.host + ":2122")
         this._dataServer.listen(this._cmdSocket.localPort + 1, this._config.client);
     })
 
