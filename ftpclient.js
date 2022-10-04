@@ -18,6 +18,7 @@ FTPClient.prototype._sendType = function () {
 }
 
 FTPClient.prototype._sendPort = function () {
+    console.log(">SENDCOMMAND " + "PORT " + this._config.client.replace(/\./g, ',') + "," + parseInt((this._cmdSocket.localPort + 1) / 256) + "," + ((this._cmdSocket.localPort + 1) % 256))
     this._sendCommand("PORT " + this._config.client.replace(/\./g, ',') + "," + parseInt((this._cmdSocket.localPort + 1) / 256) + "," + ((this._cmdSocket.localPort + 1) % 256), this._callback, 200)
 }
 
